@@ -4,6 +4,7 @@ import Icon from '../../Icon';
 import ToolbarButton from '../../ToolbarButton'; */
 
 import HR from "../components/HR";
+import Table from "../components/Table";
 
 const Posts: CollectionConfig = {
     slug: "posts",
@@ -58,6 +59,7 @@ const Posts: CollectionConfig = {
                     "h5",
                     "h6",
                     HR,
+                    Table,
                     "indent",
                     "link",
                     "ol",

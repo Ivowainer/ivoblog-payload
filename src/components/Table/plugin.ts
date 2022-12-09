@@ -4,7 +4,7 @@ const withHR = (incomingEditor: Editor): Editor => {
     const editor = incomingEditor;
     const { isVoid } = editor;
 
-    editor.isVoid = (element: any) => (element.type === "hr" ? true : isVoid(element));
+    editor.isVoid = (element: any) => (element.type === "table" ? true : isVoid(element));
 
     return editor;
 };
