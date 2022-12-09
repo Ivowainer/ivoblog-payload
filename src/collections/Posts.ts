@@ -1,97 +1,98 @@
-import { CollectionConfig } from 'payload/types';
+import { CollectionConfig } from "payload/types";
 /* import TableElement from '../../TableElement';
 import Icon from '../../Icon';
 import ToolbarButton from '../../ToolbarButton'; */
 
+import HR from "../components/HR";
+
 const Posts: CollectionConfig = {
-  slug: 'posts',
-  admin: {
-    defaultColumns: ['title', 'author', 'description', 'content', 'category', 'tags'],
-    useAsTitle: 'title',
-  },
-  access: {
-    read: () => true,
-  },
-  fields: [
-    {
-      name: 'title',
-      type: 'text',
+    slug: "posts",
+    admin: {
+        defaultColumns: ["title", "author", "description", "content", "category", "tags"],
+        useAsTitle: "title",
     },
-    {
-      name: 'description',
-      type: 'text',
+    access: {
+        read: () => true,
     },
-    {
-      name: 'author',
-      type: 'relationship',
-      relationTo: 'users',
-    },
-    {
-      name: 'publishedDate',
-      type: 'date',
-    },
-    {
-      name: 'category',
-      type: 'relationship',
-      relationTo: 'categories'
-    },
-    {
-      name: 'tags',
-      type: 'relationship',
-      relationTo: 'tags',
-      hasMany: true,
-    },
-    {
-      name: 'slug',
-      type: 'text'
-    },
-    {
-      name: 'content',
-      type: 'richText',
-      admin: {
-        
-        elements: [
-          'h1',
-          'h2',
-          'h3',
-          'h4',
-          'h5',
-          'h6',
-          'indent',
-          'link',
-          'ol',
-          'relationship',
-          'ul',
-          'upload',
-          'blockquote',
-          /* {
-            name: 'table',
-            Button: Icon,
-            Element: ToolbarButton,
-            plugins: []
-          } */
-        ]
-      },
-    },
-    {
-      name: 'status',
-      type: 'select',
-      options: [
+    fields: [
         {
-          value: 'draft',
-          label: 'Draft',
+            name: "title",
+            type: "text",
         },
         {
-          value: 'published',
-          label: 'Published',
+            name: "description",
+            type: "text",
         },
-      ],
-      defaultValue: 'draft',
-      admin: {
-        position: 'sidebar',
-      }
-    }
-  ],
-}
+        {
+            name: "author",
+            type: "relationship",
+            relationTo: "users",
+        },
+        {
+            name: "publishedDate",
+            type: "date",
+        },
+        {
+            name: "category",
+            type: "relationship",
+            relationTo: "categories",
+        },
+        {
+            name: "tags",
+            type: "relationship",
+            relationTo: "tags",
+            hasMany: true,
+        },
+        {
+            name: "slug",
+            type: "text",
+        },
+        {
+            name: "content",
+            type: "richText",
+            admin: {
+                elements: [
+                    "h2",
+                    "h3",
+                    "h4",
+                    "h5",
+                    "h6",
+                    HR,
+                    "indent",
+                    "link",
+                    "ol",
+                    "relationship",
+                    "ul",
+                    "upload",
+                    "blockquote",
+                    /* {
+                        name: 'table',
+                        Button: Icon,
+                        Element: ToolbarButton,
+                        plugins: []
+                    } */
+                ],
+            },
+        },
+        {
+            name: "status",
+            type: "select",
+            options: [
+                {
+                    value: "draft",
+                    label: "Draft",
+                },
+                {
+                    value: "published",
+                    label: "Published",
+                },
+            ],
+            defaultValue: "draft",
+            admin: {
+                position: "sidebar",
+            },
+        },
+    ],
+};
 
 export default Posts;
